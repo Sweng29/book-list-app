@@ -1,11 +1,19 @@
 import React from "react";
 import "./App.css";
 
-const title = "The Legend of Zelda™";
-const description =
-  "Tears of the Kingdom – The Complete Official Guide: Collector's Edition";
-const imgUrl = "./images/pokemon.jpeg";
-const imgDescription = "Pokemon";
+const firstBook = {
+  description: "Timeless Lessons On Wealth, Greed, And Happiness",
+  title: "The Psychology Of Money",
+  imgUrl: "./images/money.jpg",
+  imgDescription: "The Psychology Of Money",
+};
+
+const secondBook = {
+  description: "Making Energy Poverty History with an Energy Mix",
+  title: "A Just Transition",
+  imgUrl: "./images/transition.jpeg",
+  imgDescription: "A Just Transition",
+};
 
 const Book = (props) => (
   <article className="book">
@@ -19,28 +27,28 @@ function App() {
   return (
     <section className="book-list">
       <Book
-        title={title}
-        description={description}
-        imgUrl={imgUrl}
-        imgDescription={imgDescription}
+        title={firstBook.title}
+        description={firstBook.description}
+        imgUrl={firstBook.imgUrl}
+        imgDescription={firstBook.imgDescription}
       />
       <Book
-        title={title}
-        description={description}
-        imgUrl={imgUrl}
-        imgDescription={imgDescription}
+        title={secondBook.title}
+        description={secondBook.description}
+        imgUrl={secondBook.imgUrl}
+        imgDescription={secondBook.imgDescription}
       />
       <Book
-        title={title}
-        description={description}
-        imgUrl={imgUrl}
-        imgDescription={imgDescription}
+        title={firstBook.title}
+        description={firstBook.description}
+        imgUrl={firstBook.imgUrl}
+        imgDescription={firstBook.imgDescription}
       />
       <Book
-        title={title}
-        description={description}
-        imgUrl={imgUrl}
-        imgDescription={imgDescription}
+        title={secondBook.title}
+        description={secondBook.description}
+        imgUrl={secondBook.imgUrl}
+        imgDescription={secondBook.imgDescription}
       />
     </section>
   );
