@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+const BookTitle = () => <h2>The Legend of Zelda™</h2>;
+const BookDescription = () => (
+  <p>Tears of the Kingdom – The Complete Official Guide: Collector's Edition</p>
+);
+const BookImage = () => <img src="./images/pokemon.jpeg" alt="Pokemon™" />;
+
+const Book = () => (
+  <article className="book">
+    <BookImage />
+    <BookTitle />
+    <BookDescription />
+  </article>
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="book-list">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
