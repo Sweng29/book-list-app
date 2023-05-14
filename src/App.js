@@ -1,27 +1,47 @@
 import React from "react";
 import "./App.css";
 
-const BookTitle = () => <h2>The Legend of Zelda™</h2>;
-const BookDescription = () => (
-  <p>Tears of the Kingdom – The Complete Official Guide: Collector's Edition</p>
-);
-const BookImage = () => <img src="./images/pokemon.jpeg" alt="Pokemon™" />;
+const title = "The Legend of Zelda™";
+const description =
+  "Tears of the Kingdom – The Complete Official Guide: Collector's Edition";
+const imgUrl = "./images/pokemon.jpeg";
+const imgDescription = "Pokemon";
 
-const Book = () => (
+const Book = (props) => (
   <article className="book">
-    <BookImage />
-    <BookTitle />
-    <BookDescription />
+    <img src={props.imgUrl} alt={props.imgDescription} />
+    <h2>{props.title}</h2>
+    <p>{props.description}</p>
   </article>
 );
 
 function App() {
   return (
     <section className="book-list">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book
+        title={title}
+        description={description}
+        imgUrl={imgUrl}
+        imgDescription={imgDescription}
+      />
+      <Book
+        title={title}
+        description={description}
+        imgUrl={imgUrl}
+        imgDescription={imgDescription}
+      />
+      <Book
+        title={title}
+        description={description}
+        imgUrl={imgUrl}
+        imgDescription={imgDescription}
+      />
+      <Book
+        title={title}
+        description={description}
+        imgUrl={imgUrl}
+        imgDescription={imgDescription}
+      />
     </section>
   );
 }
