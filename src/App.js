@@ -15,11 +15,11 @@ const secondBook = {
   imgDescription: "A Just Transition",
 };
 
-const Book = (props) => (
+const Book = ({ imgUrl, imgDescription, title, description }) => (
   <article className="book">
-    <img src={props.imgUrl} alt={props.imgDescription} />
-    <h2>{props.title}</h2>
-    <p>{props.description}</p>
+    <img src={imgUrl} alt={imgDescription} />
+    <h2>{title}</h2>
+    <p>{description}</p>
   </article>
 );
 
