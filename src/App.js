@@ -1,56 +1,25 @@
 import React from "react";
 import "./App.css";
-
-const firstBook = {
-  description: "Timeless Lessons On Wealth, Greed, And Happiness",
-  title: "The Psychology Of Money",
-  imgUrl: "./images/money.jpg",
-  imgDescription: "The Psychology Of Money",
-};
-
-const secondBook = {
-  description: "Making Energy Poverty History with an Energy Mix",
-  title: "A Just Transition",
-  imgUrl: "./images/transition.jpeg",
-  imgDescription: "A Just Transition",
-};
-
-const Book = ({ imgUrl, imgDescription, title, description }) => (
-  <article className="book">
-    <img src={imgUrl} alt={imgDescription} />
-    <h2>{title}</h2>
-    <p>{description}</p>
-  </article>
-);
+import Book from "./Book";
+import { books } from "./books";
 
 function App() {
   return (
-    <section className="book-list">
-      <Book
-        title={firstBook.title}
-        description={firstBook.description}
-        imgUrl={firstBook.imgUrl}
-        imgDescription={firstBook.imgDescription}
-      />
-      <Book
-        title={secondBook.title}
-        description={secondBook.description}
-        imgUrl={secondBook.imgUrl}
-        imgDescription={secondBook.imgDescription}
-      />
-      <Book
-        title={firstBook.title}
-        description={firstBook.description}
-        imgUrl={firstBook.imgUrl}
-        imgDescription={firstBook.imgDescription}
-      />
-      <Book
-        title={secondBook.title}
-        description={secondBook.description}
-        imgUrl={secondBook.imgUrl}
-        imgDescription={secondBook.imgDescription}
-      />
-    </section>
+    <>
+      <h2 className="heading">Amazon Best Sellers</h2>
+      <section className="book-list">
+        {books.map((book) => (
+          <Book
+            key={book.id}
+            title={book.title}
+            description={book.description}
+            imgUrl={book.imgUrl}
+            id={book.id}
+            imgDescription={book.imgDescription}
+          />
+        ))}
+      </section>
+    </>
   );
 }
 
