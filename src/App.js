@@ -1,28 +1,25 @@
 import React from "react";
 import "./App.css";
-
-const BookTitle = () => <h2>The Legend of Zelda™</h2>;
-const BookDescription = () => (
-  <p>Tears of the Kingdom – The Complete Official Guide: Collector's Edition</p>
-);
-const BookImage = () => <img src="./images/pokemon.jpeg" alt="Pokemon™" />;
-
-const Book = () => (
-  <article className="book">
-    <BookImage />
-    <BookTitle />
-    <BookDescription />
-  </article>
-);
+import Book from "./Book";
+import { books } from "./books";
 
 function App() {
   return (
-    <section className="book-list">
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-    </section>
+    <>
+      <h2 className="heading">Amazon Best Sellers</h2>
+      <section className="book-list">
+        {books.map((book) => (
+          <Book
+            key={book.id}
+            title={book.title}
+            description={book.description}
+            imgUrl={book.imgUrl}
+            id={book.id}
+            imgDescription={book.imgDescription}
+          />
+        ))}
+      </section>
+    </>
   );
 }
 
